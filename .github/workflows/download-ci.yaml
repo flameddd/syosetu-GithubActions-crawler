@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: npm install --production
-    - run: novel-downloader-cli --siteID ${{ github.event.inputs.siteID }} --outputDir ./save "${{ github.event.inputs.url }}"
+    - run: SITEID=${{ github.event.inputs.siteID }} URL=${{ github.event.inputs.url }} npm start
     - uses: actions/upload-artifact@v1
       with:
         name: Download-save
