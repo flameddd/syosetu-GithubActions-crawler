@@ -1,0 +1,23 @@
+name: "download"
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: '"ncode.syosetu" URL (ex: http://ncode.syosetu.com/n0611em)'     
+        required: true
+        default: ''
+      siteID:
+        description: 'siteID: "NovelSiteSyosetu" or "NovelSiteKakuyomu"'
+        required: true
+        default: 'NovelSiteSyosetu '
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm install --production
+    - run: "novel-downloader-cli --siteID ${{ github.event.inputs.siteID }} --outputDir .\/save \"${{ github.event.inputs.url }}\""
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Download-save
+        path: save
