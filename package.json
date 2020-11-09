@@ -1,11 +1,10 @@
 {
-  "name": "novel-downloader",
+  "name": "syosetu-GithubActions-crawler",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "novel-downloader-cli --siteID syosetu --outputDir .\/save \"n2273dh\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
