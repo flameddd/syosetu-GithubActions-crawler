@@ -1,1 +1,2 @@
-# DO NOT DELETE "**save**" folder. It's output folder
+# DO NOT DELETE "**save**" folder.
+This is output folder.
